@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: poppins;
+    
+    
+}
+.container{
+    position: relative;
+    max-width: 500px;
+    box-shadow: 0px 0px 20px 5px rgba(141, 140, 140, 0.489);
+    padding: 30px 20px;
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+ 
+.signupForm{
+    display: none;
+    transition: 1s;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px; 
+    border:none;
+    background-color: rgba(202, 202, 202, 0.223);
+    font-family: inherit;
+}
+ input[type="submit"]{
+    background-color: rgb(180, 173, 206);
+    cursor: pointer;
+    transition: all .2s;
+    font-weight:500;
+}
+input[type="submit"]:hover{
+  background-color: rgb(165, 154, 207);
+}
+input[type="radio"]{
+    display: none;
+}
+.toggleBtns{
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+.indicator{
+    width: 50%;
+    position: absolute;
+    height: 5px;
+    background-color: rgba(120, 95, 219, 0.303);
+    bottom: 0;
+    /* transition: .5s ease; */
+    height: 100%;
+}
+.toggleBtns label{
+    background-color: rgb(153, 152, 198);
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+}
+#signup:checked ~ .loginForm{
+    display: none;
+}
+#signup:checked ~ .signupForm{
+   display: block;
+  
+}
+#signup:checked ~ .toggleBtns .indicator{
+    transform: translateX(100%);
+    
+}
+
+@media (max-width:510px) {
+.toggleBtns{
+        margin-bottom: 20px;
+    }
+    body{
+        padding: 30px;
+    }
+}
+
